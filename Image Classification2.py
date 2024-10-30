@@ -5,7 +5,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
 
 # 데이터셋 경로 설정
-data_dir = "C:/programming/Image_Classification_Model/images2"
+data_dir = "C:/programming/Image_Classification_Model/train_data"
 
 # 이미지 전처리 및 데이터 로더 설정
 train_datagen = ImageDataGenerator(
