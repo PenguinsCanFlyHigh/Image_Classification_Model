@@ -5,7 +5,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
 
 # 데이터셋 경로 설정
-data_dir = "C:/programming/Imageset model/images2"
+data_dir = "C:/programming/Image_Classification_Model/images2"
 
 # 이미지 전처리 및 데이터 로더 설정
 train_datagen = ImageDataGenerator(
@@ -50,7 +50,9 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
 history = model.fit(
     train_generator,
     validation_data=validation_generator,
-    epochs=5,
+    epochs=15,
     steps_per_epoch=train_generator.samples // train_generator.batch_size,
     validation_steps=validation_generator.samples // validation_generator.batch_size
 )
+
+model.save("image_classification_model_v1.h5")
